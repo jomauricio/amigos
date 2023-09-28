@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Amigos Homepage</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{% static 'ico/favicon.ico' %}" />
     <!-- Bootstrap icons-->
@@ -50,8 +50,21 @@
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                {{amigo}}
+            <div class="row justify-content-center">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ amigo.avatar.url}}" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ amigo.nome }}</h5>
+                                <p class="card-text">{{ amigo.info }}</p>
+                                <p class="card-text"><small class="text-muted">{{ amigo.endereco }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
