@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Amigo
 from .serializers import AmigoSerializer
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework import filters
+
 
 # Create your views here.
 
@@ -23,3 +25,5 @@ def detalhar(request, id):
 class AmigoViewSet(ReadOnlyModelViewSet):
     queryset = Amigo.objects.all()
     serializer_class = AmigoSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ["nome"]
